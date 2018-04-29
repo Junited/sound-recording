@@ -14,6 +14,8 @@
 		BFC8F4AC2095613600D8829E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC8F4AA2095613600D8829E /* LaunchScreen.storyboard */; };
 		BFC8F4B72095613600D8829E /* whistleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC8F4B62095613600D8829E /* whistleTests.swift */; };
 		BFC8F4C22095613600D8829E /* whistleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC8F4C12095613600D8829E /* whistleUITests.swift */; };
+		BFC8F4D02095620700D8829E /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC8F4CF2095620700D8829E /* RecordWhistleViewController.swift */; };
+		BFC8F4D22096441D00D8829E /* TempiFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC8F4D12096441D00D8829E /* TempiFFT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BFC8F4BD2095613600D8829E /* whistleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whistleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC8F4C12095613600D8829E /* whistleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whistleUITests.swift; sourceTree = "<group>"; };
 		BFC8F4C32095613600D8829E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFC8F4CF2095620700D8829E /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
+		BFC8F4D12096441D00D8829E /* TempiFFT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempiFFT.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 		BFC8F4A02095612F00D8829E /* whistle */ = {
 			isa = PBXGroup;
 			children = (
+				BFC8F4D12096441D00D8829E /* TempiFFT.swift */,
 				BFC8F4A12095612F00D8829E /* AppDelegate.swift */,
 				BFC8F4A32095612F00D8829E /* ViewController.swift */,
+				BFC8F4CF2095620700D8829E /* RecordWhistleViewController.swift */,
 				BFC8F4A52095612F00D8829E /* Main.storyboard */,
 				BFC8F4A82095613600D8829E /* Assets.xcassets */,
 				BFC8F4AA2095613600D8829E /* LaunchScreen.storyboard */,
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC8F4D22096441D00D8829E /* TempiFFT.swift in Sources */,
 				BFC8F4A42095612F00D8829E /* ViewController.swift in Sources */,
 				BFC8F4A22095612F00D8829E /* AppDelegate.swift in Sources */,
+				BFC8F4D02095620700D8829E /* RecordWhistleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

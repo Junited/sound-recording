@@ -1,21 +1,19 @@
 //
-//  ViewController.swift
+//  RecordWhistleViewController.swift
 //  whistle
 //
 //  Created by Jun on 4/28/18.
 //  Copyright © 2018 Jun. All rights reserved.
-// source: https://www.hackingwithswift.com/read/33/2/recording-from-the-microphone-with-avaudiorecorder    
+//
 
 import UIKit
 import AVFoundation
-class ViewController: UIViewController, AVAudioRecorderDelegate {
+
+class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     var stackView: UIStackView!
     var recordButton: UIButton!
-    var fft: TempiFFT!
-    var whistleController: RecordWhistleViewController!
-
-    
     var recordingSession: AVAudioSession!
+    
     var whistleRecorder: AVAudioRecorder!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,24 +40,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    override func loadView() {
-        super.loadView()
-        
-        view.backgroundColor = UIColor.gray
-        
-        stackView = UIStackView()
-        stackView.spacing = 30
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = UIStackViewDistribution.fillEqually
-        stackView.alignment = .center
-        stackView.axis = .vertical
-        view.addSubview(stackView)
-        
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-    
     func loadRecordingUI() {
         recordButton = UIButton()
         recordButton.translatesAutoresizingMaskIntoConstraints = false
@@ -77,6 +57,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         
         stackView.addArrangedSubview(failLabel)
     }
+    
     class func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
@@ -84,8 +65,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     class func getWhistleURL() -> URL {
-        return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
+        return getDocumentsDirectory().appendingPathComponent("melon.m4a")
     }
+    
     func startRecording() {
         // 1
         view.backgroundColor = UIColor(red: 0.6, green: 0, blue: 0, alpha: 1)
@@ -151,14 +133,38 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    override func loadView() {
+        super.loadView()
+        
+        view.backgroundColor = UIColor.gray
+        
+        stackView = UIStackView()
+        stackView.spacing = 30
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = UIStackViewDistribution.fillEqually
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        view.addSubview(stackView)
+        
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-    @objc func addWhistle() {
-        let vc = RecordWhistleViewController()
-        navigationController?.pushViewController(vc, animated: true)
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-}
+    */
 
+}
